@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GPA Calculator</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon\apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon\favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon\favicon-16x16.png">
+    <link rel="manifest" href="favicon\site.webmanifest">
+    <link rel="mask-icon" href="favicon\safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        h1 {
+            color: rgb(15, 27, 22);
+            text-align: center;
+        }
+        
+        select {
+            width: 158px;
+            height: 24px;
+            color: #fff;
+            font: 16px;
+            background-color: #a3dd82;
+        }
+        
+        select:hover {
+            background-color: #72f0f0;
+            color: black;
+        }
+        
+        .button1 {
+            padding: 5px 0px;
+            background-color: #a3dd82;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            width: 80px;
+            font: 12px sans-serif;
+            font-weight: bold;
+            -moz-box-shadow: 1px 1px 2px 1px #ccc;
+            -webkit-box-shadow: 1px 1px 2px 1px #ccc;
+            box-shadow: 1px 1px 2px 1px #ccc;
+        }
+        
+        .button1:hover {
+            background-color: #72f0f0;
+            -moz-box-shadow: 2px 2px 2px 2px #ccc;
+            -webkit-box-shadow: 2px 2px 2px 2px #ccc;
+            box-shadow: 2px 1px 2px 2px #ccc;
+            cursor: pointer;
+            cursor: hand
+        }
+        
+        body {
+            animation: 10000ms ease-in-out infinite color-change;
+        }
+        
+        .cgpa {
+            text-align: center;
+        }
+        
+        .text {
+            background-color: #d1d1d1;
+        }
+        
+        .copyright {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: aqua;
+            color: rgb(53, 43, 43);
+            text-align: center;
+        }
+        
+        .copyright a {
+            text-decoration: underline;
+            color: #272323;
+        }
+        
+        @keyframes color-change {
+            0% {
+                background-color: teal;
+            }
+            20% {
+                background-color: gold;
+            }
+            40% {
+                background-color: indianred;
+            }
+            60% {
+                background-color: violet;
+            }
+            80% {
+                background-color: green;
+            }
+            100% {
+                background-color: teal;
+            }
+        }
+        
+        @media only screen and (max-width: 450px) {
+            .copyright {
+                font-size: smaller;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>ANNA UNIVERSITY GPA CALCULATOR<br>REG.2017</h1>
+    <div style="text-align: center;color: rgb(112, 69, 16);">
+        <p>
+            <h3>Select your Department & Semester:</h3>
+        </p>
+        <form name="opt">
+            <select id="dept" name="dept">
+                <option value="">Select Dept...</option>
+                <option value="cse">CSE</option>
+                <option value="ece">ECE</option>
+                <option value="civil">CIVIL</option>
+                <option value="eee">EEE</option>
+                <option value="it">IT</option>
+                <option value="mech">Mechanical</option>
+                <option value="ei">E&I</option>
+                <option value="aero">Aeronautical</option>
+                
+                <option value="Others">Others</option>
+            </select>
+            <input type="button" value="submit" class="button1" onclick="go()" />
+        </form>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="cgpa" id="cgpa">
+        <h1>Calculate Your CGPA Here</h1>
+        Select Number Of Semesters Completed:
+        <select id="userinput" value="0">
+            <option value="0">--select--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+
+
+        </select>
+        <input class="button1" type="button" onclick="addTo()" value="Go!" />
+    </div>
+    <footer class="copyright">
+        Copyright ©
+        <script>
+            document.write(new Date().getFullYear())
+        </script> <a href="https://udai1605.github.io/" target="blank">Udai1605</a> , All Rights Reserved<br><a href="mailto:rudaikiran@gmail.com">Contact Me</a>
+    </footer>
+    <script>
+        function go() {
+            location =
+                document.opt.dept.options[document.opt.dept.selectedIndex].value + ".html";
+        }
+
+        function addTo() {
+            var a = Number(document.getElementById("userinput").value);
+            for (var i = 0; i < a; i++) {
+                var input = document.createElement("input");
+                input.type = "text";
+                input.id = "" + (i + 1);
+                input.setAttribute("value", "");
+                input.setAttribute("class", "text");
+
+                input.placeholder = "Enter Semester " + (i + 1) + " Gpa";
+                document.body.appendChild(input);
+            }
+            var resu = document.createElement("input");
+            resu.type = "button";
+            resu.setAttribute("class", "button1");
+            resu.setAttribute("onclick", "ca()");
+            resu.value = "Calculate";
+            document.body.appendChild(resu);
+        }
+
+        function ca() {
+            var r = Number(document.getElementById("userinput").value);
+            var nums = [];
+            for (var i = 1; i <= r; i++) {
+                nums[i - 1] = Number(document.getElementById("" + i).value);
+
+            }
+            b = nums.reduce((a, b) => a + b, 0) / r;
+
+            var para = document.createElement("p");
+            var node = document.createTextNode("Your CGPA Is: " + b);
+            para.appendChild(node);
+            var element = document.getElementById("cgpa");
+            element.appendChild(para);
+        }
+    </script>
+</body>
+
+</html>

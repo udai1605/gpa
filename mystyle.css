@@ -1,0 +1,110 @@
+.num {
+    position: absolute;
+    left: 45%;
+    top: 5%;
+    font-size: larger;
+}
+
+.h2 {
+    text-align: center;
+}
+
+.num1,
+.num2,
+.num3,
+.num4,
+.num5,
+.num6,
+.num7,
+.num8 {
+    background-color: #88d440;
+    margin: auto;
+    width: 40%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+.button1 {
+    padding: 5px 0px;
+    background-color: #ebb33b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 80px;
+    font: 12px sans-serif;
+    font-weight: bold;
+    -moz-box-shadow: 1px 1px 2px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 2px 1px #ccc;
+    box-shadow: 1px 1px 2px 1px #ccc;
+}
+
+.button1:hover {
+    background-color: #72f0f0;
+    -moz-box-shadow: 2px 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px 2px #ccc;
+    box-shadow: 2px 1px 2px 2px #ccc;
+    cursor: pointer;
+    cursor: hand
+}
+
+#link {
+    position: relative;
+    align-items: flex-end;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #88d440);
+    background-size: 400% 400%;
+    animation: gradient 7000ms ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 25%;
+    }
+    25% {
+        background-position: 25% 50%;
+    }
+    50% {
+        background-position: 50% 75%;
+    }
+    75% {
+        background-position: 75% 100%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .num {
+        position: absolute;
+        left: 30%;
+        top: 5%;
+        font-size: larger;
+    }
+    .num1 {
+        width: 80% !important;
+    }
+    .num2 {
+        width: 80% !important;
+    }
+    .num3 {
+        width: 80% !important;
+    }
+    .num4 {
+        width: 80% !important;
+    }
+    .num5 {
+        width: 80% !important;
+    }
+    .num6 {
+        width: 80% !important;
+    }
+    .num7 {
+        width: 80% !important;
+    }
+    .num8 {
+        width: 80% !important;
+    }
+}
