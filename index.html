@@ -144,7 +144,7 @@
         <h1>Calculate Your CGPA Here</h1>
         Select Number Of Semesters Completed:
         <select id="userinput" value="0">
-            <option value="0">--select--</option>
+            <option value="0">--Select--</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -163,7 +163,7 @@
         Copyright ©
         <script>
             document.write(new Date().getFullYear())
-        </script> <a href="https://udai1605.github.io/" target="blank">Udai1605</a> , All Rights Reserved<br><a href="mailto:rudaikiran@gmail.com" target="blank">Contact Me</a>
+        </script> UKTECH , All Rights Reserved<br><a href="https://udai1605.github.io/" target="blank">About Me</a>&nbsp; &nbsp;<a href="mailto:rudaikiran@gmail.com" target="blank">Contact Me</a>
     </footer>
     <script>
         function go() {
@@ -176,10 +176,11 @@
             var a = Number(document.getElementById("userinput").value);
             for (var i = 0; i < a; i++) {
                 var input = document.createElement("input");
-                input.type = "text";
+                input.type = "number";
                 input.id = "" + (i + 1);
                 input.setAttribute("value", "");
                 input.setAttribute("class", "text");
+
 
                 input.placeholder = "Enter Semester " + (i + 1) + " Gpa";
                 document.body.appendChild(input);
@@ -199,9 +200,17 @@
             var nums = [];
             for (var i = 1; i <= r; i++) {
                 nums[i - 1] = Number(document.getElementById("" + i).value);
-
             }
             b = nums.reduce((a, b) => a + b, 0) / r;
+            for (var i = 1; i <= r; i++) {
+                if (nums[i - 1] == "") {
+                    alert("Warning : Give Some Input Don't Leave Empty");
+                    b = "";
+                } else if (nums[i - 1] > 10) {
+                    alert("Warning : Enter Value Between 0-10");
+                    b = "";
+                }
+            }
 
             var para = document.createElement("p");
             var node = document.createTextNode("Your CGPA Is: " + b);
