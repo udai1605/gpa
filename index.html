@@ -134,7 +134,12 @@
             <input type="button" value="submit" class="button1" onclick="go()" />
         </form>
     </div>
-    <br><br><br><br><br><br>
+    <br><br><br>
+    <p style="text-align: center;">
+        <INPUT TYPE="button" class="button1" onClick="history.go(0)" VALUE="Refresh">
+    </p><br><br><br>
+
+
     <div class="cgpa" id="cgpa">
         <h1>Calculate Your CGPA Here</h1>
         Select Number Of Semesters Completed:
@@ -151,13 +156,14 @@
 
 
         </select>
-        <input class="button1" type="button" onclick="addTo()" value="Go!" />
+        <input class="button1" id="button1" type="button" onclick="addTo()" value="Go!" />
+
     </div>
     <footer class="copyright">
         Copyright ©
         <script>
             document.write(new Date().getFullYear())
-        </script> <a href="https://udai1605.github.io/" target="blank">Udai1605</a> , All Rights Reserved<br><a href="mailto:rudaikiran@gmail.com">Contact Me</a>
+        </script> <a href="https://udai1605.github.io/" target="blank">Udai1605</a> , All Rights Reserved<br><a href="mailto:rudaikiran@gmail.com" target="blank">Contact Me</a>
     </footer>
     <script>
         function go() {
@@ -166,6 +172,7 @@
         }
 
         function addTo() {
+            document.getElementById("button1").disabled = true;
             var a = Number(document.getElementById("userinput").value);
             for (var i = 0; i < a; i++) {
                 var input = document.createElement("input");
@@ -181,11 +188,13 @@
             resu.type = "button";
             resu.setAttribute("class", "button1");
             resu.setAttribute("onclick", "ca()");
+            resu.setAttribute("id", "button2");
             resu.value = "Calculate";
             document.body.appendChild(resu);
         }
 
         function ca() {
+            document.getElementById("button2").disabled = true;
             var r = Number(document.getElementById("userinput").value);
             var nums = [];
             for (var i = 1; i <= r; i++) {
@@ -199,6 +208,31 @@
             para.appendChild(node);
             var element = document.getElementById("cgpa");
             element.appendChild(para);
+            if (b >= 8.5) {
+                var para = document.createElement("p");
+                var node = document.createTextNode("Outstanding Performance 👏👏🤩🤩");
+                para.appendChild(node);
+                var element = document.getElementById("cgpa");
+                element.appendChild(para);
+            } else if (b >= 7.5 && b < 8.5) {
+                var para = document.createElement("p");
+                var node = document.createTextNode("Excellent Work.Keep Going 😎😎😎😎");
+                para.appendChild(node);
+                var element = document.getElementById("cgpa");
+                element.appendChild(para);
+            } else if (b >= 6.5 && b < 7.5) {
+                var para = document.createElement("p");
+                var node = document.createTextNode("Good Work 😁😁😁😁");
+                para.appendChild(node);
+                var element = document.getElementById("cgpa");
+                element.appendChild(para);
+            } else {
+                var para = document.createElement("p");
+                var node = document.createTextNode("Start Concentrating 😉😉😉😉");
+                para.appendChild(node);
+                var element = document.getElementById("cgpa");
+                element.appendChild(para);
+            }
         }
     </script>
 </body>
