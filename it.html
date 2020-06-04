@@ -183,6 +183,7 @@
 
             </select> <br>
             <p style="text-align: center;"><input type="button" id="result" class="button1" value="Calculate" onclick="getselop()"></p>
+            <P id="z1"></P>
             Your GPA is :
             <input type="text" id="gpa" name="result" value=""><br>
             <a href="index.html">Go To Main Page</a> &nbsp; &nbsp;&nbsp;<a href="#top ">Choose Semester</a>
@@ -326,6 +327,7 @@
                 <option value="0">AB</option>
             </select> <br>
             <p style="text-align: center;"><input type="button" id="result" class="button1" value="Calculate" onclick="getselop2()"></p>
+            <P id="z2"></P>
             Your GPA is :
             <input type="text" id="gpa1" name="result" value=""><br>
         </form>
@@ -492,6 +494,7 @@
                 <option value="0">AB</option>
             </select> <br>
             <p style="text-align: center;"><input type="button" id="result" class="button1" value="Calculate" onclick="getselop3()"></p>
+            <P id="z3"></P>
             Your GPA is :
             <input type="text" id="gpa2" name="result" value=""><br>
             <a href="index.html">Go To Main Page</a> &nbsp; &nbsp;&nbsp;<a href="#top ">Choose Semester</a>
@@ -657,6 +660,7 @@
                 <option value="0">AB</option>
             </select> <br>
             <p style="text-align: center;"><input type="button" id="result" class="button1" value="Calculate" onclick="getselop4()"></p>
+            <P id="z4"></P>
             Your GPA is :
             <input type="text" id="gpa3" name="result" value=""><br>
         </form>
@@ -823,6 +827,7 @@
 
             </select> <br>
             <p style="text-align: center;"><input type="button" id="result" class="button1" value="Calculate" onclick="getselop5()"></p>
+            <P id="z5"></P>
             Your GPA is :
             <input type="text" id="gpa4" name="result" value=""><br>
         </form>
@@ -984,6 +989,7 @@
             </select> <br>
 
             <p style="text-align: center;"><input type="button" id="result" class="button1" value="Calculate" onclick="getselop6()"></p>
+            <P id="z6"></P>
             Your GPA is :
             <input type="text" id="gpa5" name="result" value=""><br>
         </form>
@@ -1124,6 +1130,7 @@
                 <option value="0">AB</option>
             </select> <br>
             <p style="text-align: center;"><input type="button" id="result" class="button1" value="Calculate" onclick="getselop7()"></p>
+            <P id="z7"></P>
             Your GPA is :
             <input type="text" id="gpa6" name="result" value=""><br>
         </form>
@@ -1201,44 +1208,13 @@
 
             </select> <br>
             <p style="text-align: center;"><input type="button" id="result" class="button1" value="Calculate" onclick="getselop8()"></p>
+            <P id="z8"></P>
             Your GPA is :
             <input type="text" id="gpa7" name="result" value=""><br>
         </form>
         <a href="index.html">Go To Main Page</a> &nbsp; &nbsp;&nbsp;<a href="#top ">Choose Semester</a></li>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script>
         function getselop() {
@@ -1262,6 +1238,23 @@
             sum = (b1 + b2 + b3 + b4 + b5 + b6 + b7 + b8);
             gpa = (total / sum);
             document.getElementById('gpa').value = gpa;
+            if (gpa >= 8.5) {
+
+                document.getElementById("z1").innerHTML = "Outstanding Performance 👏👏🤩🤩";
+
+            } else
+            if (gpa >= 7.5 && gpa < 8.5) {
+
+                document.getElementById("z1").innerHTML = "Excellent Work.Keep Going 😎😎😎😎"
+
+            } else if (gpa >= 6.5 && gpa < 7.5) {
+                document.getElementById("z1").innerHTML = "Good Work 😁😁😁😁"
+
+            } else {
+
+                document.getElementById("z1").innerHTML = "Start Concentrating 😉😉😉😉"
+
+            };
         }
 
         function getselop2() {
@@ -1285,6 +1278,23 @@
             sum1 = (d1 + d2 + d3 + d4 + d5 + d6 + d7 + d8);
             gpa1 = (total1 / sum1);
             document.getElementById('gpa1').value = gpa1;
+            if (gpa1 >= 8.5) {
+
+                document.getElementById("z2").innerHTML = "Outstanding Performance 👏👏🤩🤩";
+
+            } else
+            if (gpa1 >= 7.5 && gpa1 < 8.5) {
+
+                document.getElementById("z2").innerHTML = "Excellent Work.Keep Going 😎😎😎😎"
+
+            } else if (gpa1 >= 6.5 && gpa1 < 7.5) {
+                document.getElementById("z2").innerHTML = "Good Work 😁😁😁😁"
+
+            } else {
+
+                document.getElementById("z2").innerHTML = "Start Concentrating 😉😉😉😉"
+
+            };
         }
 
         function getselop3() {
@@ -1310,6 +1320,23 @@
             sum2 = (f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9);
             gpa2 = (total2 / sum2);
             document.getElementById('gpa2').value = gpa2;
+            if (gpa2 >= 8.5) {
+
+                document.getElementById("z3").innerHTML = "Outstanding Performance 👏👏🤩🤩";
+
+            } else
+            if (gpa2 >= 7.5 && gpa2 < 8.5) {
+
+                document.getElementById("z3").innerHTML = "Excellent Work.Keep Going 😎😎😎😎"
+
+            } else if (gpa2 >= 6.5 && gpa2 < 7.5) {
+                document.getElementById("z3").innerHTML = "Good Work 😁😁😁😁"
+
+            } else {
+
+                document.getElementById("z3").innerHTML = "Start Concentrating 😉😉😉😉"
+
+            };
         }
 
         function getselop4() {
@@ -1335,6 +1362,23 @@
             sum3 = (h1 + h2 + h3 + h4 + h5 + h6 + h7 + h8 + h9);
             gpa3 = (total3 / sum3);
             document.getElementById('gpa3').value = gpa3;
+            if (gpa3 >= 8.5) {
+
+                document.getElementById("z4").innerHTML = "Outstanding Performance 👏👏🤩🤩";
+
+            } else
+            if (gpa3 >= 7.5 && gpa3 < 8.5) {
+
+                document.getElementById("z4").innerHTML = "Excellent Work.Keep Going 😎😎😎😎"
+
+            } else if (gpa3 >= 6.5 && gpa3 < 7.5) {
+                document.getElementById("z4").innerHTML = "Good Work 😁😁😁😁"
+
+            } else {
+
+                document.getElementById("z4").innerHTML = "Start Concentrating 😉😉😉😉"
+
+            };
 
         }
 
@@ -1361,6 +1405,23 @@
             sum4 = (j1 + j2 + j3 + j4 + j5 + j6 + j7 + j8 + j9);
             gpa4 = (total4 / sum4);
             document.getElementById('gpa4').value = gpa4;
+            if (gpa4 >= 8.5) {
+
+                document.getElementById("z5").innerHTML = "Outstanding Performance 👏👏🤩🤩";
+
+            } else
+            if (gpa4 >= 7.5 && gpa4 < 8.5) {
+
+                document.getElementById("z5").innerHTML = "Excellent Work.Keep Going 😎😎😎😎"
+
+            } else if (gpa4 >= 6.5 && gpa4 < 7.5) {
+                document.getElementById("z5").innerHTML = "Good Work 😁😁😁😁"
+
+            } else {
+
+                document.getElementById("z5").innerHTML = "Start Concentrating 😉😉😉😉"
+
+            };
 
         }
 
@@ -1389,6 +1450,23 @@
             sum5 = (l1 + l2 + l3 + l4 + l5 + l6 + l7 + l8 + l9);
             gpa5 = (total5 / sum5);
             document.getElementById('gpa5').value = gpa5;
+            if (gpa5 >= 8.5) {
+
+                document.getElementById("z6").innerHTML = "Outstanding Performance 👏👏🤩🤩";
+
+            } else
+            if (gpa5 >= 7.5 && gpa5 < 8.5) {
+
+                document.getElementById("z6").innerHTML = "Excellent Work.Keep Going 😎😎😎😎"
+
+            } else if (gpa5 >= 6.5 && gpa5 < 7.5) {
+                document.getElementById("z6").innerHTML = "Good Work 😁😁😁😁"
+
+            } else {
+
+                document.getElementById("z6").innerHTML = "Start Concentrating 😉😉😉😉"
+
+            };
 
         }
 
@@ -1415,6 +1493,23 @@
             sum6 = (n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8);
             gpa6 = (total6 / sum6);
             document.getElementById('gpa6').value = gpa6;
+            if (gpa6 >= 8.5) {
+
+                document.getElementById("z7").innerHTML = "Outstanding Performance 👏👏🤩🤩";
+
+            } else
+            if (gpa6 >= 7.5 && gpa6 < 8.5) {
+
+                document.getElementById("z7").innerHTML = "Excellent Work.Keep Going 😎😎😎😎"
+
+            } else if (gpa6 >= 6.5 && gpa6 < 7.5) {
+                document.getElementById("z7").innerHTML = "Good Work 😁😁😁😁"
+
+            } else {
+
+                document.getElementById("z7").innerHTML = "Start Concentrating 😉😉😉😉"
+
+            };
 
         }
 
@@ -1432,6 +1527,23 @@
             sum7 = (p1 + p2 + p3 + p4);
             gpa7 = (total7 / sum7);
             document.getElementById('gpa7').value = gpa7;
+            if (gpa7 >= 8.5) {
+
+                document.getElementById("z8").innerHTML = "Outstanding Performance 👏👏🤩🤩";
+
+            } else
+            if (gpa7 >= 7.5 && gpa7 < 8.5) {
+
+                document.getElementById("z8").innerHTML = "Excellent Work.Keep Going 😎😎😎😎"
+
+            } else if (gpa7 >= 6.5 && gpa7 < 7.5) {
+                document.getElementById("z8").innerHTML = "Good Work 😁😁😁😁"
+
+            } else {
+
+                document.getElementById("z8").innerHTML = "Start Concentrating 😉😉😉😉"
+
+            };
 
         }
     </script>
